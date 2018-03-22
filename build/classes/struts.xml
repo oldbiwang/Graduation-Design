@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="test" extends="struts-default">
+		<action name="test" class="test">
+		</action>
+		<action name="baseAction" class="baseAction">
+		</action>
+		
+		<!-- 登陆界面的 Action  -->
+		<action name="loginAction" class="loginAction">
+			<result name="login">/WEB-INF/jsp/login.jsp</result>
+		</action>
+		
+		<!-- 判断登陆是否成功的 Action，成功就重定向到后台页面，不成功就重定向到失败页面 ！ -->
+		<action name="logininAction" class="logininAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">success</param>
+				<param name="userName">${user.userName}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">error</param>
+			</result>
+		</action>
+		
+		<!-- 登陆成功则跳转到后台管理页面 -->
+		<action name="success" class="successAction">
+			<result name="back">/WEB-INF/jsp/back.jsp</result>
+		</action>
+		
+		<!-- 失败则跳转到失败页面 -->
+		<action name="error" class="errorAction">
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+		</action>
+		
+		<!-- 返回娱乐新闻列表的 json -->
+		<action name="yuLeNewsBackAction" class="yuLeNewsBackAction">
+		<!-- 	<result name="back">
+				/WEB-INF/jsp/back.jsp
+			</result> -->
+		</action>
+		
+		<!-- 保存新建娱乐新闻的 Action -->
+		<action name="saveYuLeNewsAction" class="saveYuLeNewsAction">
+			<result name="back">
+				/WEB-INF/jsp/back.jsp
+			</result>
+		</action>
+		
+		<!-- 删除娱乐新闻的 Action -->
+		<action name="deleteYuLeNewsAction" class="deleteYuLeNewsAction">
+			<result name="back">
+				/WEB-INF/jsp/back.jsp
+			</result>
+		</action>
+		
+		<!-- 编辑导入娱乐新闻数据的 Action -->
+		<action name="editYuLeNewsAction" class="editYuLeNewsAction">
+			<result name="back">
+				/WEB-INF/jsp/back.jsp
+			</result>
+		</action>
+		
+		<!-- 保存修改后娱乐新闻数据的 Action -->
+		<action name="editSaveYuLeNewsAction" class="editSaveYuLeNewsAction">
+			<result name="editsuccess">
+				/WEB-INF/jsp/back.jsp
+			</result>
+		</action>
+		
+		<!-- 跳到娱乐看点后台管理首页 -->
+		<action name="yuLeKanDianBackAction" class="yuLeKanDianBackAction">
+			<result name="yuLeKanDianBack">
+				/WEB-INF/jsp/yulekandianback.jsp
+			</result>
+		</action>
+
+		<!-- 返回娱乐看点 json list 后台管理首页 -->
+		<action name="yuLeKanDianJsonListAction" class="yuLeKanDianJsonListAction">
+		</action>
+		
+		<!-- 保存新建的娱乐看点 -->
+		<action name="saveYuLeKandianAction" class="saveYuLeKandianAction">
+			<result name="yuLeKanDianBackAction">
+				/WEB-INF/jsp/yulekandianback.jsp
+			</result>
+		</action>
+		
+			<!-- 导入指定 id 娱乐看点的数据 -->
+		<action name="editYuLeKandianAction" class="editYuLeKandianAction">
+		</action>
+		
+		
+		<!-- 保存编辑娱乐看点 -->
+		<action name="editSaveYuLeKandianAction" class="editSaveYuLeKandianAction">
+			<result name="yuLeKanDianBack">
+				/WEB-INF/jsp/yulekandianback.jsp
+			</result>
+		</action>
+		
+		<!-- 删除娱乐看点 -->
+		<action name="deleteYuLeKandianAction" class="deleteYuLeKandianAction">
+			<result name="yuLeKanDianBack">
+				/WEB-INF/jsp/yulekandianback.jsp
+			</result>
+		</action>
+		
+		<!-- 在线听歌后台管理 -->
+		<action name="yuLeSongBackAction" class="yuLeSongBackAction">
+			<result name="yuLeSongBack">
+				/WEB-INF/jsp/yulesongback.jsp
+			</result>
+		</action>
+		
+		<!-- 新建歌曲 -->
+		<action name="saveYuLeSongAction" class="saveYuLeSongAction">
+			<result name="yuLeSongBack">
+				/WEB-INF/jsp/yulesongback.jsp
+			</result>
+		</action>
+		
+		<!-- 返回歌曲的 json 列表 -->
+		<action name="yuLeSongJsonListAction" class="yuLeSongJsonListAction">
+		</action>
+		
+		<!-- 导入特定 id 歌曲要编辑的数据 -->
+		<action name="editYuLeSongAction" class="editYuLeSongAction">
+		</action>
+		
+		<!-- 保存歌曲编辑修改的数据 -->
+		<action name="editSaveYuLeSongAction" class="editSaveYuLeSongAction">
+			<result name="yuLeSongBack">
+				/WEB-INF/jsp/yulesongback.jsp
+			</result>
+		</action>
+		
+		<!-- 删除歌曲 -->
+		<action name="deleteYuLeSongAction" class="deleteYuLeSongAction">
+			<result name="yuLeSongBack">
+				/WEB-INF/jsp/yulesongback.jsp
+			</result>
+		</action>
+		
+	</package>
+</struts>    
