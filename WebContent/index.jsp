@@ -336,15 +336,39 @@ s.parentNode.insertBefore(hm, s);
 	<!-- Container 在线听歌部分 -->
 	<div id="song" class="container">
 	  <h3 class="text-center">Song</h3>
-	  <p class="text-center"><em>We love our fans!</em></p>
-	  <ul class="list-group">
-		  <li class="list-group-item">First item</li>
-		  <li class="list-group-item">Second item</li>
-		  <li class="list-group-item">Third item</li>
-	 </ul>
+	  <p class="text-center"><em>We love songs!</em></p>
+	
+	  <div id="songlist" class="row" style="
+	  			border:3px solid;
+				border-radius:25px;
+				background-color: #fff;
+				padding: 6px;">
+		  
+		  
+	<!-- 	  <ul class="list-group">
+		    <li  style="background-color: #424242;" class="list-group-item">
+		    		<div class="media"> 
+				<div class="media-left media-bottom"> 
+					<a href="#"> 
+						<h4 style="font-size: 10px;">王菲 流年</h4>
+					</a> 
+				</div> 
+				<div class="media-body" style="text-align: center;"> 
+					<audio controls>
+  						<source src="static/song/liunian.mp3">
+						Your browser does not support the audio element.
+					</audio>
+				</div> 
+			</div> 
+		    	
+		    </li>
+		    <li  style=" background-color: #424242;" class="list-group-item">Second item</li>
+		    <li  style=" background-color: #424242;" class="list-group-item">Third item</li>
+		  </ul> -->
+	  </div>
 
-	  <br>
 
+	</div>
 
 	<!-- Footer -->
 	<footer class="text-center">
@@ -358,6 +382,7 @@ s.parentNode.insertBefore(hm, s);
 		$(function() {
 			getYuLeNews();
 			getYuLeKandian();
+			getSongList();
 		});
 		
 		// 填充首页三个娱乐新闻
@@ -419,6 +444,98 @@ s.parentNode.insertBefore(hm, s);
 							$("#yulekandianintro3").text(jsonArray[i].intro);
 						}
 					}
+				}
+			});
+		}
+		
+		function getSongList() {
+			$.ajax({
+				type: "GET",
+				url: "yuLeSongJsonListAction.action",
+				dataType: "json",
+				success: function(data) {
+					callSongListFunction(data);
+				}
+			});
+		}
+		
+		// 填充歌曲列表
+		function callSongListFunction(dataParam) {
+			$("#songlist").empty();
+			var h2 = $("<h2></h2>").css("text-align", "center").append("歌曲列表");
+			$("#songlist").append(h2);
+			var jsonArrayObject = dataParam;
+			
+			$.each(jsonArrayObject, function(index, item) {
+				if(index % 5 == 0) {
+					var div = $("<div></div>").addClass("panel panel-primary").css("border-radius", "10px");
+					var divheading = $("<div></div>").addClass("panel-heading").css("border-radius", "10px");
+					var h3 = $("<h3></h3>").addClass("panel-title")
+					.css("letter-spacing", "2px")
+					.append(item.singer + "&nbsp;--&nbsp;"
+					+ item.name);
+					var divcontent = $("<div></div>").addClass("panel-body");
+					
+					var sound = $("<audio></audio>")
+						.attr("controls", "controls")
+						.attr("src", item.url)
+						.attr("type", "audio/mpeg");
+					
+					sound.appendTo(divcontent);
+					
+					h3.appendTo(divheading);
+					divcontent.append("<br>");
+					divheading.appendTo(div);
+					divcontent.appendTo(div);
+					div.appendTo("#songlist");
+				}
+				
+				else if(index % 5 == 1) {
+					var div = $("<div></div>").addClass("panel panel-success")
+					.css("border-radius", "10px");
+					var divheading = $("<div></div>").addClass("panel-heading").css("border-radius", "10px");
+					var h3 = $("<h3></h3>").addClass("panel-title")
+							.css("letter-spacing", "2px")
+							.append(item.singer + "&nbsp;--&nbsp;"
+							+ item.name);
+					var divcontent = $("<div></div>").addClass("panel-body");
+
+					var sound = $("<audio></audio>").
+					attr("controls", "controls")
+					.attr("src", item.url)
+					.attr("type", "audio/mpeg");
+				
+					sound.appendTo(divcontent);
+					
+					h3.appendTo(divheading);
+					divcontent.append("<br>");
+					divheading.appendTo(div);
+					divcontent.appendTo(div);
+					div.appendTo("#songlist");	
+				}
+				
+				else if(index % 5 == 2) {
+					var div = $("<div></div>").addClass("panel panel-info")
+					.css("border-radius", "10px");
+					var divheading = $("<div></div>").addClass("panel-heading").css("border-radius", "10px");
+					var h3 = $("<h3></h3>").addClass("panel-title")
+							.css("letter-spacing", "2px")
+							.append(item.singer + "&nbsp;--&nbsp;"
+							+ item.name);
+					var divcontent = $("<div></div>").addClass("panel-body");
+					
+					var sound = $("<audio></audio>").
+					attr("controls", "controls")
+					.attr("src", item.url)
+					.attr("type", "audio/mpeg");
+				
+					sound.appendTo(divcontent);
+				
+					h3.appendTo(divheading);
+					divcontent.append("<br>");
+					divheading.appendTo(div);
+					divcontent.appendTo(div);
+					div.appendTo("#songlist");
 				}
 			});
 		}
