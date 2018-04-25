@@ -129,9 +129,10 @@ span.psw {
 </head>
 <body>
 
-<h2>我是登陆按钮，点我！</h2>
+<h2 style="text-align: center;">你还没有登陆！！！</h2>
+<h2 style="text-align: center;">我是登陆按钮，点我！</h2>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+<button  style="text-align: center;" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 <div id="id01" class="modal">
   

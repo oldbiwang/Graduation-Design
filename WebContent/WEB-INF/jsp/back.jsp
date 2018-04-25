@@ -35,10 +35,11 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="success.action">娱乐新闻管理 <span
+						<li class="active"><a href="successAction.action">娱乐新闻管理 <span
 								class="sr-only">(current)</span></a></li>
 						<li><a href="yuLeKanDianBackAction.action">娱乐看点管理</a></li>
 						<li><a href="yuLeSongBackAction.action">歌曲管理</a></li>
+						<li><a href="logoutAction.action">退出登录</a></li>
 					</ul>
 				</div>
 			</div>

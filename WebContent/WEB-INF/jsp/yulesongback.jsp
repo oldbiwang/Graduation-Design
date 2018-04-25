@@ -33,10 +33,11 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="success.action">娱乐新闻管理 <span
+						<li><a href="successAction.action">娱乐新闻管理 <span
 								class="sr-only">(current)</span></a></li>
 						<li><a href="yuLeKanDianBackAction.action">娱乐看点管理</a></li>
 						<li class="active"><a href="yuLeSongBackAction.action">歌曲管理</a></li>
+						<li><a href="logoutAction.action">退出登录</a></li>
 					</ul>
 				</div>
 			</div>
@@ -353,7 +354,6 @@
 					data: "id="+id,
 					dataType: "json",
 					success: function(data) {
-						alert(data.id);
 						$("#songid").val(data.id);
 						$("#songsinger").val(data.singer);
 						$("#songlevel").val(data.level);

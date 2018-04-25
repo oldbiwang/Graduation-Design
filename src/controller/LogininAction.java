@@ -1,16 +1,30 @@
 package controller;
 
+import org.apache.struts2.ServletActionContext;
 import org.springframework.transaction.annotation.Transactional;
-
-//import com.opensymphony.xwork2.ModelDriven;
 
 import entity.User;
 import service.UserService;
 
 @Transactional
-public class LogininAction extends BaseAction /*implements ModelDriven<User>*/{
+public class LogininAction extends BaseAction {
 	private User user;
 	
+	public String execute() {
+		UserService userService = this.getAllService().getUserService();
+		if(user != null) {
+			if((userService.login(user.getUserName(), user.getPassword()))){
+				System.out.println("user ==== " + user);
+				ServletActionContext.getRequest().getSession().setAttribute("User", user);
+				return "success";
+			}
+			else {
+				return "error";
+			}
+		}
+		return null;
+	}
+
 	public User getUser() {
 		return user;
 	}
@@ -18,18 +32,4 @@ public class LogininAction extends BaseAction /*implements ModelDriven<User>*/{
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-	public String execute() {
-		UserService userService = this.getAllService().getUserService();	
-		if((userService.login(user.getUserName(), user.getPassword())))
-			return "success";
-		else
-			return "error";
-	}
-
-/*	@Override
-	public User getModel() {
-		// TODO Auto-generated method stub
-		return user;
-	}*/
 }

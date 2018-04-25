@@ -48,6 +48,6 @@ public class EditYuLeNewsAction extends BaseAction {
 		ServletActionContext.getResponse().getWriter().flush();
 		ServletActionContext.getResponse().getWriter().close();
 		
-		return "null";
+		return null;
 	}
 }

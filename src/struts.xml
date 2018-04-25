@@ -2,8 +2,28 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="test" extends="struts-default">
-	 		
-	<action name="test" class="test">
+	
+	 	<!-- 1.自定义过滤器 -->
+        <interceptors>
+            <!-- 2.配置一个或多个拦截器 -->
+            <interceptor name="myIntercepter" class="interceptor.LoginInterceptor"/>
+            <!-- 3.定义拦截器栈 -->
+            <interceptor-stack name="mydefault">  
+                <interceptor-ref name="defaultStack" />  
+                <interceptor-ref name="myIntercepter" />  
+            </interceptor-stack>  
+        </interceptors>
+        
+        <!--4.配置默认拦截器，对整个包下的action都有效-->
+        <default-interceptor-ref name="mydefault"/>
+        
+        <!--5.配置拦截器返回的逻辑视图-->
+        <global-results>
+              <result name="login">/WEB-INF/jsp/login.jsp</result>
+        </global-results>
+  
+       
+		<action name="test" class="test">
 		</action>
 		<action name="baseAction" class="baseAction">
 		</action>
@@ -16,16 +36,16 @@
 		<!-- 判断登陆是否成功的 Action，成功就重定向到后台页面，不成功就重定向到失败页面 ！ -->
 		<action name="logininAction" class="logininAction">
 			<result name="success" type="redirectAction">
-				<param name="actionName">success</param>
-				<param name="userName">${user.userName}</param>
+				<param name="actionName">successAction</param>
 			</result>
 			<result name="error" type="redirectAction">
 				<param name="actionName">error</param>
 			</result>
 		</action>
 		
+		 <!--6.如果用户非法登陆是无法访问到此路径下的 back.jsp  -->
 		<!-- 登陆成功则跳转到后台管理页面 -->
-		<action name="success" class="successAction">
+		<action name="successAction" class="successAction">
 			<result name="back">/WEB-INF/jsp/back.jsp</result>
 		</action>
 		
@@ -34,11 +54,23 @@
 			<result name="error">/WEB-INF/jsp/error.jsp</result>
 		</action>
 		
+		<!-- 退出登录 -->
+		<action name="logoutAction" class="logoutAction">
+			<result name="login">/WEB-INF/jsp/login.jsp</result>
+		</action>
+		
 		<!-- 返回娱乐新闻列表的 json -->
 		<action name="yuLeNewsBackAction" class="yuLeNewsBackAction">
 		<!-- 	<result name="back">
 				/WEB-INF/jsp/back.jsp
 			</result> -->
+		</action>
+		
+		<!-- 展示一条娱乐新闻 -->
+		<action name="showANewsAction" class="showANewsAction">
+		 	<result name="showanews">
+				/WEB-INF/jsp/showanews.jsp
+			</result> 
 		</action>
 		
 		<!-- 保存新建娱乐新闻的 Action -->
@@ -69,11 +101,25 @@
 			</result>
 		</action>
 		
+		<!-- 展示娱乐新闻列表的 Action -->
+		<action name="showNewsListAction" class="showNewsListAction">
+			<result name="newsList">
+				/WEB-INF/jsp/list.jsp
+			</result>
+		</action>
+		
 		<!-- 跳到娱乐看点后台管理首页 -->
 		<action name="yuLeKanDianBackAction" class="yuLeKanDianBackAction">
 			<result name="yuLeKanDianBack">
 				/WEB-INF/jsp/yulekandianback.jsp
 			</result>
+		</action>
+		
+		<!-- 展示一条娱乐新闻 -->
+		<action name="showAKandianAction" class="showAKandianAction">
+		 	<result name="showakandian">
+				/WEB-INF/jsp/showakandian.jsp
+			</result> 
 		</action>
 
 		<!-- 返回娱乐看点 json list 后台管理首页 -->
@@ -103,6 +149,13 @@
 		<action name="deleteYuLeKandianAction" class="deleteYuLeKandianAction">
 			<result name="yuLeKanDianBack">
 				/WEB-INF/jsp/yulekandianback.jsp
+			</result>
+		</action>
+		
+		<!-- 返回娱乐看点列表 -->
+		<action name="showKandianListAction" class="showKandianListAction">
+			<result name="kandianList">
+				/WEB-INF/jsp/listkandian.jsp
 			</result>
 		</action>
 		
@@ -141,6 +194,5 @@
 				/WEB-INF/jsp/yulesongback.jsp
 			</result>
 		</action>
-		
 	</package>
 </struts>    

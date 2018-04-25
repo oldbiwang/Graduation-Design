@@ -254,7 +254,7 @@ s.parentNode.insertBefore(hm, s);
 		 				<h3 id="yulenewstitle1">Thumbnail label</h3> 
 		 				<p id="yulenewsintro1">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
 		 				<p>
-		 					<a id="yulenewsbtn1" href="#" class="btn btn-primary" role="button">More</a> 
+		 					<a id="yulenewsbtn1" target="_blank" href="#" class="btn btn-primary" role="button">More</a> 
 		 				</p> 
 		 			</div> 
 		 	   </div> 
@@ -266,7 +266,7 @@ s.parentNode.insertBefore(hm, s);
 		   				<h3 id="yulenewstitle2">Thumbnail label</h3> 
 		   				<p id="yulenewsintro2">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
 		   				<p>
-		   					<a id="yulenewsbtn2" href="#" class="btn btn-primary" role="button">More</a> 
+		   					<a id="yulenewsbtn2" target="_blank" href="#" class="btn btn-primary" role="button">More</a> 
 		   				</p> 
 		   			</div> 
 		   		</div>
@@ -278,11 +278,12 @@ s.parentNode.insertBefore(hm, s);
 		  		 	<h3 id="yulenewstitle3">Thumbnail label</h3> 
 		  		 	<p id="yulenewsintro3">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
 		  		 	<p>
-		  		 		<a id="yulenewsbtn3" href="#" class="btn btn-primary" role="button">More</a> 
+		  		 		<a id="yulenewsbtn3" target="_blank" href="#" class="btn btn-primary" role="button">More</a> 
 		  		 	</p>
 		  		 </div> 
 		  	</div> 
 		  </div> 
+		  <a id="morenewsbtn" target="_blank" href="showNewsListAction.action" class="btn btn-primary" role="button">更多娱乐新闻</a>
 	   </div> 
 	</div>
 	  
@@ -294,42 +295,43 @@ s.parentNode.insertBefore(hm, s);
 	    <h3 class="text-center">娱乐看点</h3>
 		<div class="bs-example" data-example-id="media-alignment"> 
 			<div class="media"> 
-				<div class="media-left"> 
-					<a href="#"> 
+				<a id="yulekandiana1" target="_blank" href="#"> 
+					<div class="media-left"> 
 						<img id="yulekandianimg1" alt="64x64" class="media-object" data-src="holder.js/64x64" src="" data-holder-rendered="true" style="width: 64px; height: 64px;"> 
-					</a> 
-				</div> 
-				<div class="media-body"> 
-					<h4 id="yulekandiantitle1" class="media-heading">Top aligned media</h4> 
-					<p id="yulekandianintro1">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p> 
-					<!-- <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p> --> 
-				</div> 
+					</div> 
+					<div class="media-body"> 
+						<h4 id="yulekandiantitle1" class="media-heading">Top aligned media</h4> 
+						<p id="yulekandianintro1">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p> 
+						<!-- <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p> --> 
+					</div> 
+				</a> 
 			</div> 
 			<div class="media"> 
-				<div class="media-left media-middle"> 
-					<a href="#"> 
+				<a id="yulekandiana2" target="_blank" href="#">
+					<div class="media-left media-middle">  
 						<img id="yulekandianimg2" alt="64x64" class="media-object" data-src="holder.js/64x64" src="" data-holder-rendered="true" style="width: 64px; height: 64px;"> 
-					</a> 
-				</div> 
-				<div class="media-body"> 
-					<h4 id="yulekandiantitle2" class="media-heading">Middle aligned media</h4> 
-					<p id="yulekandianintro2">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p> 
-					<!-- <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>  -->
-				</div> 
+					</div> 
+					<div class="media-body"> 
+						<h4 id="yulekandiantitle2" class="media-heading">Middle aligned media</h4> 
+						<p id="yulekandianintro2">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p> 
+						<!-- <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>  -->
+					</div> 
+				</a> 
 			</div> 
 			<div class="media"> 
-				<div class="media-left media-bottom"> 
-					<a href="#"> 
-						<img id="yulekandianimg3" alt="64x64" class="media-object" data-src="holder.js/64x64" src="" data-holder-rendered="true" style="width: 64px; height: 64px;"> 
-					</a> 
-				</div> 
-				<div class="media-body"> 
-					<h4 id="yulekandiantitle3" class="media-heading">Bottom aligned media</h4> 
-					<p id="yulekandianintro3">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p> 
-					<!-- <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>  -->
-				</div> 
+				<a id="yulekandiana3" target="_blank" href="#">
+					<div class="media-left media-bottom"> 
+						<img id="yulekandianimg3" alt="64x64" class="media-object" data-src="holder.js/64x64" src="" data-holder-rendered="true" style="width: 64px; height: 64px;"> 	
+					</div> 
+					<div class="media-body"> 
+						<h4 id="yulekandiantitle3" class="media-heading">Bottom aligned media</h4> 
+						<p id="yulekandianintro3">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p> 
+						<!-- <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>  -->
+					</div> 
+				</a> 
 			</div> 
 		</div>
+		<a id="morekandianbtn" style="float:right" target="_blank" href="showKandianListAction.action" class="btn btn-primary" role="button">更多娱乐看点</a>
 	 </div>
   </div>
 
@@ -375,7 +377,7 @@ s.parentNode.insertBefore(hm, s);
 	  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
 	    <span class="glyphicon glyphicon-chevron-up"></span>
 	  </a><br><br>
-	  <p>Bootstrap Theme Made By <a href="../default.html" data-toggle="tooltip" title="Visit w3schools">www.w3schools.com</a></p> 
+	  <p>基于 Struts2 的综合性娱乐网站</p> 
 	</footer>
 
 	<script>
@@ -399,18 +401,21 @@ s.parentNode.insertBefore(hm, s);
 							$("#yulenewsimg1").attr("src", item.imgurl);
 							$("#yulenewstitle1").text(item.title);
 							$("#yulenewsintro1").text(item.intro);
+							$("#yulenewsbtn1").attr("href", "showANewsAction.action?id="+item.id);
 						}
 						
 						if(i == 1) {
 							$("#yulenewsimg2").attr("src", item.imgurl);
 							$("#yulenewstitle2").html(item.title);
 							$("#yulenewsintro2").html(item.intro);
+							$("#yulenewsbtn2").attr("href", "showANewsAction.action?id="+item.id);
 						}
 						
 						if(i == 2) {
 							$("#yulenewsimg3").attr("src", item.imgurl);
 							$("#yulenewstitle3").text(item.title);
 							$("#yulenewsintro3").text(item.intro);
+							$("#yulenewsbtn3").attr("href", "showANewsAction.action?id="+item.id);
 						}
 					}
 				}
@@ -430,18 +435,20 @@ s.parentNode.insertBefore(hm, s);
 							$("#yulekandianimg1").attr("src", jsonArray[i].imgurl);
 							$("#yulekandiantitle1").text(jsonArray[i].title);
 							$("#yulekandianintro1").text(jsonArray[i].intro);
+							$("#yulekandiana1").attr("href","showAKandianAction.action?id=" + jsonArray[i].id);
 						}
 						
 						if(i == 1) {
 							$("#yulekandianimg2").attr("src", jsonArray[i].imgurl);
 							$("#yulekandiantitle2").text(jsonArray[i].title);
 							$("#yulekandianintro2").text(jsonArray[i].intro);
+							$("#yulekandiana2").attr("href","showAKandianAction.action?id=" + jsonArray[i].id);
 						}
-						
 						if(i == 2) {
 							$("#yulekandianimg3").attr("src", jsonArray[i].imgurl);
 							$("#yulekandiantitle3").text(jsonArray[i].title);
 							$("#yulekandianintro3").text(jsonArray[i].intro);
+							$("#yulekandiana3").attr("href","showAKandianAction.action?id=" + jsonArray[i].id);
 						}
 					}
 				}

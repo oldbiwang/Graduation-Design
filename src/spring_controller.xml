@@ -19,14 +19,17 @@
 	<bean id="loginAction" class="controller.LoginAction"> </bean>
 	<bean id="logininAction" class="controller.LogininAction"></bean>
 	<bean id="errorAction" class="controller.ErrorAction"></bean>
-	
-	<!-- 娱乐新闻有关的 Action -->
+	<bean id="logoutAction" class="controller.LogoutAction"></bean>
 	<bean id="successAction" class="controller.SuccessAction"></bean>
+	
+	<!-- 娱乐新闻有关的 Action -->	
 	<bean id="yuLeNewsBackAction" class="controller.YuLeNewsBackAction"></bean>
 	<bean id="saveYuLeNewsAction" class="controller.SaveYuLeNewsAction"></bean>
 	<bean id="deleteYuLeNewsAction" class="controller.DeleteYuLeNewsAction"></bean>
 	<bean id="editYuLeNewsAction" class="controller.EditYuLeNewsAction"></bean>
 	<bean id="editSaveYuLeNewsAction" class="controller.EditSaveYuLeNewsAction"></bean>
+	<bean id="showANewsAction" class="controller.ShowANewsAction"></bean>
+	<bean id="showNewsListAction" class="controller.ShowNewsListAction"></bean>
 	
 	<!-- 娱乐看点有关的 Action -->
 	<bean id="yuLeKanDianBackAction" class="controller.YuLeKanDianBackAction"></bean> 
@@ -35,6 +38,8 @@
 	<bean id="editYuLeKandianAction" class="controller.EditYuLeKandianAction"></bean>
 	<bean id="editSaveYuLeKandianAction" class="controller.EditSaveYuLeKandianAction"></bean>
 	<bean id="deleteYuLeKandianAction" class="controller.DeleteYuLeKandianAction"></bean>
+	<bean id="showAKandianAction" class="controller.ShowAKandianAction"></bean>
+	<bean id="showKandianListAction" class="controller.ShowKandianListAction"></bean>
 	
 	<!-- 在线听歌有关的 Action -->
 	<bean id="yuLeSongBackAction" class="controller.YuLeSongBackAction"></bean>
